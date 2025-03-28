@@ -70,27 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add subtle fade-in animation for sections
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
-    });
-    
     // Newsletter show/hide functionality
     const showNewsletterBtn = document.getElementById('show-newsletter');
     const hideNewsletterBtn = document.getElementById('hide-newsletter');
@@ -111,29 +90,4 @@ document.addEventListener('DOMContentLoaded', function() {
             showNewsletterBtn.style.display = 'inline-block';
         });
     }
-    
-    // Add pulsating shadow effect to cards
-    document.querySelectorAll('.preview-card, .testimonial').forEach(element => {
-        element.classList.add('pulse-shadow');
-    });
-    
-    // Add subtle animation to form containers
-    document.querySelectorAll('#subscribe-form, #contact-form').forEach(form => {
-        form.parentElement.classList.add('pulse-shadow');
-    });
-    
-    // Apply text animations
-    document.querySelectorAll('.hero-content h1, .hero-content h2, .hero-content p, .hero-content .cta-buttons').forEach(el => {
-        el.classList.add('fade-in-text');
-    });
-    
-    // Add highlight-text class to important phrases
-    document.querySelectorAll('h1 span, .newsletter-content h5, .highlight-box').forEach(el => {
-        el.classList.add('highlight-text');
-    });
-    
-    // Adjust animation timing for sections
-    document.querySelectorAll('section').forEach((section, index) => {
-        section.style.animationDelay = (0.2 * index) + 's';
-    });
 }); 

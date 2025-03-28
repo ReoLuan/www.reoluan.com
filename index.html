@@ -169,16 +169,17 @@
             <p>Have questions or suggestions? We'd love to hear from you!</p>
             <form id="contact-form">
                 <div class="form-group">
-                    <input type="text" id="contact-name" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your name" required />
                 </div>
                 <div class="form-group">
-                    <input type="email" id="contact-email" placeholder="Your Email" required>
+                    <input type="email" name="email" placeholder="Your email" required />
                 </div>
                 <div class="form-group">
-                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <textarea name="message" placeholder="Message" required></textarea>
                 </div>
-                <button type="submit" class="btn primary">Send Message</button>
+                <button type="submit">Send</button>
             </form>
+            <a href="mailto:reo@reoluan.com" class="btn primary">Email Us</a>
         </div>
     </section>
 
@@ -215,5 +216,29 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const data = {
+                name: this.name.value,
+                email: this.email.value,
+                message: this.message.value
+            };
+
+            try {
+                const res = await fetch("http://localhost:5000/send", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+                alert(result.message);
+            } catch (error) {
+                alert("Failed to send message. Please try again later.");
+            }
+        });
+    </script>
 </body>
 </html> 

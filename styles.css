@@ -36,13 +36,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--background-color);
-    background-image: 
-        linear-gradient(120deg, 
-            rgba(255,255,255,0.8), 
-            rgba(240,248,255,0.7), 
-            rgba(230,230,250,0.75)
-        );
-    background-attachment: fixed;
+    background-image: none;
 }
 
 .container {
@@ -100,7 +94,7 @@ section {
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 12px 24px;
     border-radius: 3px;
     font-weight: 500;
     cursor: pointer;
@@ -315,7 +309,7 @@ nav ul li a:hover {
     border-radius: 6px;
     box-shadow: var(--card-shadow);
     border: none;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .preview-card h4 {
@@ -430,7 +424,7 @@ nav ul li a:hover {
 #subscribe-form {
     max-width: 450px;
     margin: 0 auto;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group {
@@ -439,7 +433,7 @@ nav ul li a:hover {
 
 input, select, textarea {
     width: 100%;
-    padding: 14px 16px;
+    padding: 12px 14px;
     border: 1px solid rgba(150, 150, 150, 0.3);
     border-radius: 3px;
     font-family: 'Poppins', sans-serif;
@@ -550,7 +544,7 @@ textarea {
     box-shadow: var(--shadow);
     text-align: left;
     position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial:before {
@@ -606,7 +600,7 @@ textarea {
 #contact-form {
     max-width: 450px;
     margin: 0 auto;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Footer */
@@ -743,9 +737,9 @@ footer {
 
 /* Animation styles */
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
 }
 
 .fade-in.visible {
@@ -833,19 +827,11 @@ section:nth-child(6).fade-in {
 
 /* Pulsating shadow effect */
 .pulse-shadow {
-    animation: pulse-shadow 4s ease-in-out infinite;
+    animation: none;
 }
 
 @keyframes pulse-shadow {
-    0% {
-        box-shadow: 0 6px 15px rgba(76, 175, 80, 0.08);
-    }
-    50% {
-        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.12), 0 0 15px var(--pearlescent-blue);
-    }
-    100% {
-        box-shadow: 0 6px 15px rgba(76, 175, 80, 0.08);
-    }
+    /* Remove this keyframe */
 }
 
 /* Apply to specific elements */
@@ -853,44 +839,26 @@ section:nth-child(6).fade-in {
 .testimonial, 
 #subscribe-form, 
 #contact-form {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .preview-card:hover, 
 .testimonial:hover, 
 #subscribe-form:hover, 
 #contact-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.15), 0 0 20px rgba(100, 149, 237, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.15);
 }
 
 /* Add a subtle pulsating border effect to sections */
 section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, transparent, var(--primary-color), var(--pearlescent-blue), var(--primary-color), transparent);
-    opacity: 0.5;
-    animation: pulse-opacity 4s ease-in-out infinite;
+    /* Remove the pulsating border effect */
+    content: none;
 }
 
 @keyframes pulse-opacity {
-    0% {
-        opacity: 0.2;
-        width: 60px;
-    }
-    50% {
-        opacity: 0.5;
-        width: 100px;
-    }
-    100% {
-        opacity: 0.2;
-        width: 60px;
-    }
+    /* Remove this keyframe */
 }
 
 /* Don't add the effect to all sections */
@@ -1050,14 +1018,14 @@ section:not(:last-child) {
 
 /* Improve form field visibility */
 input, textarea, select {
-    padding: 14px 16px;
+    padding: 12px 14px;
     border: 1px solid rgba(150, 150, 150, 0.3);
     background-color: white;
 }
 
 /* Enhance button visibility */
 .btn {
-    padding: 12px 28px;
+    padding: 12px 24px;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -1146,27 +1114,19 @@ footer {
 .preview-card, 
 .testimonial, 
 form {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .preview-card:hover, 
 .testimonial:hover, 
 form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.15), 0 0 20px rgba(100, 149, 237, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.15);
 }
 
 /* Refine the pulsating shadow animation */
 @keyframes pulse-shadow {
-    0% {
-        box-shadow: 0 6px 15px rgba(76, 175, 80, 0.08);
-    }
-    50% {
-        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.12), 0 0 15px var(--pearlescent-blue);
-    }
-    100% {
-        box-shadow: 0 6px 15px rgba(76, 175, 80, 0.08);
-    }
+    /* Remove this keyframe */
 }
 
 /* Add subtle entrance animation for text */
@@ -1232,18 +1192,7 @@ form:hover {
 
 /* Refine section divider animation */
 @keyframes pulse-opacity {
-    0% {
-        opacity: 0.2;
-        width: 60px;
-    }
-    50% {
-        opacity: 0.5;
-        width: 100px;
-    }
-    100% {
-        opacity: 0.2;
-        width: 60px;
-    }
+    /* Remove this keyframe */
 }
 
 /* Add subtle text highlight effect */
