@@ -1,47 +1,95 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    color: #333;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* Header */
 header {
-  background: #333;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
+    background-color: #2e6a4a;
+    padding: 20px 0;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 
-main {
-  padding: 20px;
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5em;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
+header nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-input, textarea, button {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-button {
-  background-color: #333;
-  color: white;
-  cursor: pointer;
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
 }
 
-button:hover {
-  background-color: #555;
+/* Hero Section */
+#hero {
+    padding: 100px 0;
+    background: #2e6a4a;
+    color: white;
+    text-align: center;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background: #333;
-  color: white;
+#hero h1 {
+    font-size: 2.5em;
 }
+
+#hero h2 {
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+
+/* Button Styling */
+.btn {
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn.primary {
+    background-color: #2e6a4a;
+    color: white;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid #2e6a4a;
+    color: #2e6a4a;
+}
+
+#subscribe .form-group input,
+#subscribe .form-group select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius:
