@@ -3,60 +3,63 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Adjusted for smaller header height
+                    top: targetElement.offsetTop - 70, // Adjust for header height
                     behavior: 'smooth'
                 });
             }
         });
     });
-    
-    // Form submission handling
+
+    // Newsletter subscribe (just a confirmation alert for now)
     const subscribeForm = document.getElementById('subscribe-form');
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const interests = document.getElementById('interests').value;
-            
-            // Here you would typically send this data to your server or newsletter service
-            // For now, we'll just show an alert
+
             alert(`Thank you, ${name}! You've been subscribed to the Reoluan newsletter.`);
-            
-            // Reset form
             this.reset();
         });
     }
-    
+
+    // Contact form — send data to live backend
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send this data to your server
-            // For now, we'll just show an alert
-            alert(`Thank you for your message, ${name}! We'll get back to you soon.`);
-            
-            // Reset form
+
+            const name = document.querySelector('#contact-form input[name="name"]').value;
+            const email = document.querySelector('#contact-form input[name="email"]').value;
+            const message = document.querySelector('#contact-form textarea[name="message"]').value;
+
+            try {
+                const res = await fetch("https://email-backend-60fil.onrender.com/send", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                const result = await res.json();
+                alert(result.message);
+            } catch (error) {
+                alert("Failed to send message. Please try again later.");
+            }
+
             this.reset();
         });
     }
-    
-    // Enhanced header scroll effect for minimalist design
+
+    // Header scroll effect
     const header = document.querySelector('header');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 30) {
@@ -69,12 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.height = '70px';
         }
     });
-    
-    // Newsletter show/hide functionality
+
+    // Show/hide newsletter content
     const showNewsletterBtn = document.getElementById('show-newsletter');
     const hideNewsletterBtn = document.getElementById('hide-newsletter');
     const newsletterContent = document.getElementById('newsletter-full');
-    
+
     if (showNewsletterBtn && newsletterContent) {
         showNewsletterBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showNewsletterBtn.style.display = 'none';
         });
     }
-    
+
     if (hideNewsletterBtn && newsletterContent) {
         hideNewsletterBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -90,4 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
             showNewsletterBtn.style.display = 'inline-block';
         });
     }
-}); 
+});
