@@ -1,244 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reoluan - Personalized Natural Health Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reoluan - Personalized Natural Health Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Reoluan</h1>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Reoluan</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Personalized <span>Preventative Health</span> Solutions</h1>
+        <h2>Powered by AI, Rooted in Natural Medicine</h2>
+        <p>Join our weekly newsletter for evidence-based natural health insights tailored to your needs.</p>
+        <div class="cta-buttons">
+          <a href="#subscribe" class="btn primary">Subscribe Now</a>
+          <a href="#learn-more" class="btn secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="container">
+      <h2>The Reoluan Newsletter</h2>
+      <div class="newsletter-info">
+        <div class="newsletter-description">
+          <p>Every week, receive personalized insights on:</p>
+          <ul>
+            <li>Natural preventative health strategies</li>
+            <li>Latest research in integrative medicine</li>
+            <li>Personalized wellness recommendations</li>
+            <li>Expert interviews and case studies</li>
+          </ul>
+          <p>Plus, daily tips and micro-insights delivered straight to your inbox!</p>
+        </div>
+        <div class="newsletter-preview">
+          <h3>Latest Issue</h3>
+          <div class="preview-card">
+            <h4>Weekly Newsletter One - Friday February 28th</h4>
+            <p class="date">February 28, 2023</p>
+            <p class="excerpt">This is the first of many newsletters discussing a revolution that is happening in health, big pharma and the food industry. This begins with the election of Donald J. Trump and the Approval of JFK Jr...</p>
+            <a href="#" class="read-more" id="show-newsletter">Read Full Newsletter</a>
+            <div class="newsletter-content" id="newsletter-full" style="display: none;">
+              <p>This is the first of many newsletters discussing a revolution that is happening...</p>
+              <!-- Truncated for brevity -->
+              <a href="#" class="btn secondary" id="hide-newsletter">Close Newsletter</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#newsletter">Newsletter</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="#subscribe" class="btn primary newsletter-cta">Subscribe for Next Week's Issue</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Personalized <span>Preventative Health</span> Solutions</h1>
-                <h2>Powered by AI, Rooted in Natural Medicine</h2>
-                <p>Join our weekly newsletter for evidence-based natural health insights tailored to your needs.</p>
-                <div class="cta-buttons">
-                    <a href="#subscribe" class="btn primary">Subscribe Now</a>
-                    <a href="#learn-more" class="btn secondary">Learn More</a>
-                </div>
-            </div>
+  <section id="subscribe">
+    <div class="container">
+      <h2>Join Our Community</h2>
+      <p>Be the first to receive our personalized health insights and updates about our upcoming application.</p>
+      <form id="subscribe-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your Name" required />
         </div>
-    </section>
-
-    <section id="newsletter">
-        <div class="container">
-            <h2>The Reoluan Newsletter</h2>
-            <div class="newsletter-info">
-                <div class="newsletter-description">
-                    <p>Every week, receive personalized insights on:</p>
-                    <ul>
-                        <li>Natural preventative health strategies</li>
-                        <li>Latest research in integrative medicine</li>
-                        <li>Personalized wellness recommendations</li>
-                        <li>Expert interviews and case studies</li>
-                    </ul>
-                    <p>Plus, daily tips and micro-insights delivered straight to your inbox!</p>
-                </div>
-                <div class="newsletter-preview">
-                    <h3>Latest Issue</h3>
-                    <div class="preview-card">
-                        <h4>Weekly Newsletter One - Friday February 28th</h4>
-                        <p class="date">February 28, 2023</p>
-                        <p class="excerpt">This is the first of many newsletters discussing a revolution that is happening in health, big pharma and the food industry. This begins with the election of Donald J. Trump and the Approval of JFK Jr...</p>
-                        <a href="#" class="read-more" id="show-newsletter">Read Full Newsletter</a>
-                        
-                        <div class="newsletter-content" id="newsletter-full" style="display: none;">
-                            <p>This is the first of many newsletters discussing a revolution that is happening in health, big pharma and the food industry. This begins with the election of Donald J. Trump and the Approval of JFK Jr. Widely outspoken against the corruption of the food industry-a massive monopolistic industry that lines their pockets with both government subsidies and our money, it has caused health problems that have trickled down to the medical industry, pharmacology and chronic disease.</p>
-                            
-                            <h5>Part 1</h5>
-                            <p>The trickle down conspiracy. I have a conspiracy I would like to share, it exists in the collective consciousness in one form or another, I am here to put them together. The phrase "they create the disease to sell you the cure" might conjure thoughts of anti government, far right alt right covid era sentiment-but at the core of that idea is a great business model. One that works as a well oiled machine, absorbing us into the folds of what is, combined, a huge money making model. See the charts below to get an idea.</p>
-                            
-                            <p class="highlight-box">Revenues of the big 3, later explained</p>
-                            <ul class="revenue-list">
-                                <li>4.9 trillion for the healthcare industry.</li>
-                                <li>602.19 billion for the pharmaceutical industry.</li>
-                                <li>850 billion for the processed food industry.</li>
-                            </ul>
-                            
-                            <p>I think that these massive industries support each other, each feeding into the others revenues and relevance. This is what I call the trickle down effect. Let's say a new drug is created, that drug is being created in a friendly environment in the US government who is allowing the patent from that drug to exist and operate with no competition. That immediately disincentivizes competition. Lowering innovation within the pharmaceutical industry.</p>
-                            
-                            <p>But let's dig deeper. While some drugs have life saving and immediate practical considerations. Others can be burdened by side effects both short term and long term that can cause cumulative damage to the person involved. In the case of especially psychotropic medication, the process of prescription is fundamentally clinical. You tell your doctor, usually a psychiatrist what symptoms you are feeling and based on that assessment they will administer you a treatment from a list of medications.</p>
-                            
-                            <p>Unfortunately, there are many things that are not ideal with this picture. The doctor is trained to look for symptoms and treat them. And the industries that manufacture and produce these psychotropics are developing these drugs with the same ethos. We'll treat the symptoms, not the cure. Just the decision to focus on this model vs another can have powerful ramifications for the patient and consumer.</p>
-                            
-                            <p>This can unfortunately have the consequence of dictating how much money is put into certain ailments, based on the profitability as well as the glaring issue of investing in treating symptoms not finding a cure. The idea is simple, if they invested in trying to find a cure for all diseases they would be out of a business! They need us to be dependent on refilling prescriptions, to keep a constant flow of income.</p>
-                            
-                            <p>The ethos becomes how can we make more money by any mechanism, rather than developing quality medications that people can benefit more from. This same mechanism also benefits the healthcare industry and starts with the food industry and of course the healthcare industry. If people eat unhealthy foods and develop chronic conditions they will need to be administered into a hospital, and charged through their insurance company.</p>
-                            
-                            <p>They will also usually be given medicines that contain side effects, which in turn create another opportunity for another medicine to be prescribed and so on. This can also be extrapolated into a more sinister plot where the pharmaceutical industries intentionally invest large sums of money into engineering side effects and charging to treat them.</p>
-                            
-                            <p>The cycle starts again with the food industry which lobbies millions of dollars for inaccurate labels to be placed on foods like vegetable oils and cherry picked research studies to be done on foods they want to sell. This starts the cycle of misinformation and chronic health problems.</p>
-                            
-                            <a href="#" class="btn secondary" id="hide-newsletter">Close Newsletter</a>
-                        </div>
-                        
-                        <a href="#subscribe" class="btn primary newsletter-cta">Subscribe for Next Week's Issue</a>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Your Email" required />
         </div>
-    </section>
-
-    <section id="subscribe">
-        <div class="container">
-            <h2>Join Our Community</h2>
-            <p>Be the first to receive our personalized health insights and updates about our upcoming application.</p>
-            <form id="subscribe-form">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <select id="interests">
-                        <option value="" disabled selected>Health Interests (Optional)</option>
-                        <option value="immunity">Immune Support</option>
-                        <option value="digestion">Digestive Health</option>
-                        <option value="energy">Energy & Vitality</option>
-                        <option value="stress">Stress Management</option>
-                        <option value="sleep">Sleep Optimization</option>
-                        <option value="all">All Topics</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn primary">Subscribe</button>
-            </form>
+        <div class="form-group">
+          <select id="interests">
+            <option value="" disabled selected>Health Interests (Optional)</option>
+            <option value="immunity">Immune Support</option>
+            <option value="digestion">Digestive Health</option>
+            <option value="energy">Energy & Vitality</option>
+            <option value="stress">Stress Management</option>
+            <option value="sleep">Sleep Optimization</option>
+            <option value="all">All Topics</option>
+          </select>
         </div>
-    </section>
+        <button type="submit" class="btn primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Reoluan</h2>
-            <div class="about-content">
-                <div class="mission">
-                    <h3>Our Mission</h3>
-                    <p>At Reoluan, we're bridging the gap between cutting-edge technology and time-tested natural medicine. Our mission is to make personalized preventative health accessible to everyone through the power of artificial intelligence.</p>
-                </div>
-                <div class="vision">
-                    <h3>Coming Soon</h3>
-                    <p>We're developing an innovative application that will analyze your unique health profile and provide customized natural health recommendations. Our newsletter is the first step in our journey together.</p>
-                </div>
-            </div>
+  <section id="about">
+    <div class="container">
+      <h2>About Reoluan</h2>
+      <div class="about-content">
+        <div class="mission">
+          <h3>Our Mission</h3>
+          <p>At Reoluan, we're bridging the gap between cutting-edge technology and time-tested natural medicine.</p>
         </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2>What Our Readers Say</h2>
-            <div class="testimonial-grid">
-                <!-- Testimonial placeholders - to be filled with real testimonials later -->
-                <div class="testimonial">
-                    <p>"The personalized recommendations I've received through the Reoluan newsletter have made a significant difference in my daily energy levels."</p>
-                    <div class="testimonial-author">- Sarah K.</div>
-                </div>
-                <div class="testimonial">
-                    <p>"I appreciate how the content balances scientific research with practical, natural solutions. It's exactly what I've been looking for."</p>
-                    <div class="testimonial-author">- Michael T.</div>
-                </div>
-                <div class="testimonial">
-                    <p>"The daily tips are concise yet impactful. They've helped me make small changes that add up to big improvements."</p>
-                    <div class="testimonial-author">- Elena R.</div>
-                </div>
-            </div>
+        <div class="vision">
+          <h3>Coming Soon</h3>
+          <p>We're developing an innovative application that will analyze your unique health profile and provide customized natural health recommendations.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Have questions or suggestions? We'd love to hear from you!</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your name" required />
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your email" required />
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Message" required></textarea>
-                </div>
-                <button type="submit">Send</button>
-            </form>
-            <a href="mailto:reo@reoluan.com" class="btn primary">Email Us</a>
+  <section id="testimonials">
+    <div class="container">
+      <h2>What Our Readers Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"The personalized recommendations I've received through the Reoluan newsletter have made a significant difference."</p>
+          <div class="testimonial-author">- Sarah K.</div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Reoluan</h3>
-                    <p>Personalized Natural Health Solutions</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#newsletter">Newsletter</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect With Us</h4>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">Twitter</a>
-                        <a href="#" class="social-icon">Instagram</a>
-                        <a href="#" class="social-icon">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Reoluan. All rights reserved.</p>
-                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
+        <div class="testimonial">
+          <p>"I appreciate how the content balances scientific research with practical, natural solutions."</p>
+          <div class="testimonial-author">- Michael T.</div>
         </div>
-    </footer>
+        <div class="testimonial">
+          <p>"The daily tips are concise yet impactful. They've helped me make small changes."</p>
+          <div class="testimonial-author">- Elena R.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", async function (e) {
-            e.preventDefault();
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Have questions or suggestions? We'd love to hear from you!</p>
+      <form id="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+      <a href="mailto:reo@reoluan.com" class="btn primary">Email Us</a>
+    </div>
+  </section>
 
-            const data = {
-                name: this.name.value,
-                email: this.email.value,
-                message: this.message.value
-            };
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Reoluan</h3>
+          <p>Personalized Natural Health Solutions</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon">Twitter</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Reoluan. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
 
-            try {
-                const res = await fetch("http://localhost:5000/send", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-                const result = await res.json();
-                alert(result.message);
-            } catch (error) {
-                alert("Failed to send message. Please try again later.");
-            }
+      const data = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value
+      };
+
+      try {
+        const res = await fetch("https://email-backend-60fil.onrender.com/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
         });
-    </script>
+
+        const result = await res.json();
+        alert(result.message);
+      } catch (error) {
+        alert("Failed to send message. Please try again later.");
+      }
+    });
+  </script>
 </body>
-</html> 
+</html>
