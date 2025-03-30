@@ -17,7 +17,7 @@ app.use(express.static(__dirname));
 
 // Serve index.html for the root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 // Verify environment variables
