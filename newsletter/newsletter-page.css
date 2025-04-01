@@ -6,7 +6,9 @@
 }
 
 .article-header {
-    background: white;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -72,6 +74,9 @@
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .article-content p {
@@ -364,7 +369,7 @@
 /* Data Box */
 .data-box {
     font-family: 'Inter', sans-serif;
-    background: rgba(248, 249, 250, 0.95);
+    background: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-left: 4px solid #4CAF50;
@@ -410,7 +415,7 @@
 }
 
 .article-cta {
-    background: rgba(248, 249, 250, 0.95);
+    background: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     padding: 2rem;
@@ -559,7 +564,7 @@
 .global-footer {
     position: relative;
     z-index: 2;
-    background: rgba(248, 249, 250, 0.98);
+    background: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -711,5 +716,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 } 
