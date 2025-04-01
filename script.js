@@ -17,6 +17,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Newsletter reader functionality
+    const showNewsletterBtn = document.getElementById('show-newsletter');
+    const closeReaderBtn = document.getElementById('close-reader');
+    const newsletterReader = document.getElementById('newsletter-reader');
+    
+    if (showNewsletterBtn && newsletterReader) {
+        showNewsletterBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            newsletterReader.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when reader is open
+        });
+    }
+    
+    if (closeReaderBtn && newsletterReader) {
+        closeReaderBtn.addEventListener('click', function() {
+            newsletterReader.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+
+    // Close reader when clicking outside content
+    if (newsletterReader) {
+        newsletterReader.addEventListener('click', function(e) {
+            if (e.target === newsletterReader) {
+                newsletterReader.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Close reader with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && newsletterReader && newsletterReader.classList.contains('active')) {
+            newsletterReader.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
     // Newsletter subscription form handling
     const subscribeForm = document.getElementById('subscribe-form');
     if (subscribeForm) {
@@ -139,25 +177,4 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.height = '70px';
         }
     });
-    
-    // Newsletter show/hide functionality
-    const showNewsletterBtn = document.getElementById('show-newsletter');
-    const hideNewsletterBtn = document.getElementById('hide-newsletter');
-    const newsletterContent = document.getElementById('newsletter-full');
-    
-    if (showNewsletterBtn && newsletterContent) {
-        showNewsletterBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            newsletterContent.style.display = 'block';
-            showNewsletterBtn.style.display = 'none';
-        });
-    }
-    
-    if (hideNewsletterBtn && newsletterContent) {
-        hideNewsletterBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            newsletterContent.style.display = 'none';
-            showNewsletterBtn.style.display = 'inline-block';
-        });
-    }
 }); 
