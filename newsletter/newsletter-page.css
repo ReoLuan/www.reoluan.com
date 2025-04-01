@@ -28,7 +28,7 @@
 .article-page .logo h1 {
     font-size: 22px !important;
     font-weight: 600 !important;
-    color: #00c853 !important;
+    color: #4CAF50 !important;
     margin: 0 !important;
     letter-spacing: 0.5px !important;
 }
@@ -210,7 +210,7 @@
 }
 
 .article-page .logo a {
-    color: #00c853 !important;
+    color: #4CAF50 !important;
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 600 !important;
@@ -547,7 +547,7 @@
 }
 
 .global-footer .footer-logo h3 {
-    color: var(--primary-color) !important;
+    color: #4CAF50 !important;
     margin-bottom: 0.5rem !important;
     font-weight: 600 !important;
     font-size: 22px !important;
