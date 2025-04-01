@@ -6,10 +6,49 @@
 }
 
 .article-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid #eee;
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-header .logo h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #00c853;
+    margin: 0;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 .article-header h1 {
@@ -172,7 +211,7 @@
     font-size: 22px;
     margin: 0;
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.5px;
 }
 
@@ -180,7 +219,7 @@
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .article-page .logo a:hover {
@@ -190,10 +229,20 @@
 .article-page .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
-.article-page .nav-links a {
+.article-page .nav-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.article-page .nav-links ul li {
+    margin-left: 30px;
+    list-style: none;
+}
+
+.article-page .nav-links ul li a {
     color: var(--heading-color);
     text-decoration: none;
     font-size: 15px;
@@ -202,7 +251,7 @@
     position: relative;
 }
 
-.article-page .nav-links a:after {
+.article-page .nav-links ul li a:after {
     content: '';
     position: absolute;
     width: 0;
@@ -213,11 +262,11 @@
     transition: width 0.3s ease;
 }
 
-.article-page .nav-links a:hover:after {
+.article-page .nav-links ul li a:hover:after {
     width: 100%;
 }
 
-.article-page .nav-links a:hover {
+.article-page .nav-links ul li a:hover {
     color: var(--text-color);
 }
 
