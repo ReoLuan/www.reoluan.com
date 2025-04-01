@@ -118,11 +118,17 @@ app.post('/api/subscribe', async (req, res) => {
     const msg = {
       to: email,
       from: process.env.SENDGRID_VERIFIED_SENDER,
+      replyTo: email,
       subject: 'Welcome to Reoluan Newsletter!',
       text: `
         Hi ${name},
 
         Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.
+        
+        Your subscription details:
+        Name: ${name}
+        Email: ${email}
+        Interests: ${interests}
 
         Best regards,
         The Reoluan Team
@@ -131,6 +137,12 @@ app.post('/api/subscribe', async (req, res) => {
         <h3>Welcome to Reoluan Newsletter!</h3>
         <p>Hi ${name},</p>
         <p>Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.</p>
+        <p><strong>Your subscription details:</strong></p>
+        <ul>
+          <li>Name: ${name}</li>
+          <li>Email: ${email}</li>
+          <li>Interests: ${interests}</li>
+        </ul>
         <p>Best regards,<br>The Reoluan Team</p>
       `,
     };
@@ -177,14 +189,18 @@ app.post('/api/contact', async (req, res) => {
     const msg = {
       to: 'reo@reoluan.com',
       from: process.env.SENDGRID_VERIFIED_SENDER,
+      replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `
+        You received a message via Reoluan.com
+
         Name: ${name}
         Email: ${email}
         Message: ${message}
       `,
       html: `
         <h3>New Contact Form Submission</h3>
+        <p>You received a message via Reoluan.com</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
