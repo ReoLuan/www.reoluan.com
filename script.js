@@ -17,40 +17,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Newsletter reader functionality
+    // Newsletter modal functionality
     const showNewsletterBtn = document.getElementById('show-newsletter');
-    const closeReaderBtn = document.getElementById('close-reader');
-    const newsletterReader = document.getElementById('newsletter-reader');
+    const closeModalBtn = document.getElementById('close-modal');
+    const newsletterModal = document.getElementById('newsletter-modal');
     
-    if (showNewsletterBtn && newsletterReader) {
+    if (showNewsletterBtn && newsletterModal) {
         showNewsletterBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            newsletterReader.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when reader is open
+            newsletterModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
         });
     }
     
-    if (closeReaderBtn && newsletterReader) {
-        closeReaderBtn.addEventListener('click', function() {
-            newsletterReader.classList.remove('active');
+    if (closeModalBtn && newsletterModal) {
+        closeModalBtn.addEventListener('click', function() {
+            newsletterModal.classList.remove('active');
             document.body.style.overflow = ''; // Restore scrolling
         });
     }
 
-    // Close reader when clicking outside content
-    if (newsletterReader) {
-        newsletterReader.addEventListener('click', function(e) {
-            if (e.target === newsletterReader) {
-                newsletterReader.classList.remove('active');
+    // Close modal when clicking outside content
+    if (newsletterModal) {
+        newsletterModal.addEventListener('click', function(e) {
+            if (e.target === newsletterModal) {
+                newsletterModal.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
     }
 
-    // Close reader with Escape key
+    // Close modal with Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && newsletterReader && newsletterReader.classList.contains('active')) {
-            newsletterReader.classList.remove('active');
+        if (e.key === 'Escape' && newsletterModal && newsletterModal.classList.contains('active')) {
+            newsletterModal.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
