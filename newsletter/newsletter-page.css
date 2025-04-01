@@ -26,9 +26,10 @@
 
 .article-header .logo h1 {
     font-size: 24px;
-    font-weight: 600;
-    color: #00c853;
+    font-weight: 500;
+    color: #4CAF50;
     margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .nav-links ul {
@@ -553,10 +554,11 @@
 }
 
 .global-footer .footer-logo h3 {
-    color: var(--primary-color);
+    color: #4CAF50;
     margin-bottom: 0.5rem;
-    font-weight: 700;
-    font-size: 22px;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.5px;
 }
 
 .global-footer .footer-logo p {
