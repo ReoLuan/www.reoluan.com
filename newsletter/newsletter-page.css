@@ -282,25 +282,36 @@
     background-color: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    margin: 4rem 0 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .article-cta p {
     font-size: 1.1rem;
     color: #34495e;
-    margin-bottom: 1rem;
+    margin: 0;
 }
 
-.back-home {
-    display: inline-block;
-    color: #7f8c8d;
+.article-cta .btn.primary {
+    min-width: 200px;
+    margin-bottom: 0.5rem;
+}
+
+.article-cta .back-home {
+    color: var(--light-text);
     text-decoration: none;
     font-size: 0.9rem;
-    margin-top: 1rem;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.back-home:hover {
+.article-cta .back-home:hover {
     color: var(--primary-color);
 }
 
@@ -321,6 +332,16 @@
     .data-box {
         margin: 1.5rem -1rem;
         border-radius: 0;
+    }
+
+    .article-cta {
+        margin: 3rem 0 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .article-cta .btn.primary {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
