@@ -11,14 +11,17 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(cors({
   origin: '*',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Accept']
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Accept', 'Origin']
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Debug middleware to log all requests
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
+  console.log('Request Headers:', req.headers);
+  console.log('Request Body:', req.body);
   next();
 });
 
@@ -139,20 +142,8 @@ app.post('/api/subscribe', async (req, res) => {
       to: email,
       from: process.env.SENDGRID_VERIFIED_SENDER,
       subject: 'Welcome to Reoluan Newsletter!',
-      text: `
-        Hi ${name},
-
-        Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.
-
-        Best regards,
-        The Reoluan Team
-      `,
-      html: `
-        <h3>Welcome to Reoluan Newsletter!</h3>
-        <p>Hi ${name},</p>
-        <p>Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.</p>
-        <p>Best regards,<br>The Reoluan Team</p>
-      `,
+      text: `Hi ${name},\n\nThank you for subscribing to our newsletter!\n\nBest regards,\nThe Reoluan Team`,
+      html: `<h3>Welcome to Reoluan Newsletter!</h3><p>Hi ${name},</p><p>Thank you for subscribing to our newsletter!</p><p>Best regards,<br>The Reoluan Team</p>`
     };
 
     await sgMail.send(msg);
