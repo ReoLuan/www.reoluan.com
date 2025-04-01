@@ -17,7 +17,7 @@ app.use(express.static(__dirname));
 
 // Serve index.html for the root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Verify environment variables
@@ -37,31 +37,6 @@ const supabase = createClient(
 // Test Supabase connection
 async function testSupabaseConnection() {
   try {
-    // First, try to create the contacts table if it doesn't exist
-    const { error: createError } = await supabase.rpc('create_contacts_if_not_exists', {
-      sql: `
-        CREATE TABLE IF NOT EXISTS contacts (
-          id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
-          name TEXT NOT NULL,
-          email TEXT NOT NULL,
-          message TEXT NOT NULL,
-          created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
-        );
-        
-        CREATE TABLE IF NOT EXISTS newsletter_subscribers (
-          id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
-          name TEXT NOT NULL,
-          email TEXT NOT NULL,
-          interests TEXT,
-          created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
-        );
-      `
-    });
-
-    if (createError) {
-      console.error('❌ Error creating tables:', createError);
-    }
-
     // Test connection by selecting from contacts
     const { data, error } = await supabase
       .from('contacts')
@@ -202,36 +177,4 @@ app.post('/api/contact', async (req, res) => {
     const msg = {
       to: 'reo@reoluan.com',
       from: process.env.SENDGRID_VERIFIED_SENDER,
-      subject: `New Contact Form Submission from ${name}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
-      `,
-      html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      `,
-    };
-
-    await sgMail.send(msg);
-
-    res.json({ 
-      success: true, 
-      message: 'Thank you! Your message has been sent successfully.' 
-    });
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Error processing your request',
-      error: error.message 
-    });
-  }
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-}); 
+      subject: `
