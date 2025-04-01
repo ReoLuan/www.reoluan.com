@@ -14,119 +14,159 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+    </style>
 </head>
 <body class="article-page">
-    <div class="video-background">
-        <video autoplay muted loop playsinline preload="auto" id="myVideo" style="width: 100%; height: 100%; object-fit: cover;">
-            <source src="Test Bubbles.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-
-    <header class="article-header">
-        <div class="container">
-            <div class="logo">
-                <h1>Reoluan</h1>
-            </div>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="/#hero">Home</a></li>
-                    <li><a href="/#newsletter">Newsletter</a></li>
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="article-main">
-        <article class="container">
-            <div class="article-meta">
-                <time datetime="2023-02-28">February 28, 2023</time>
-            </div>
-            
-            <div class="article-content">
-                <h1>The Trickle Down Effect in Healthcare</h1>
-                
-                <p class="article-intro">This is the first of many newsletters discussing a revolution that is happening in health, big pharma and the food industry. This begins with the election of Donald J. Trump and the Approval of JFK Jr.</p>
-                
-                <h2>The Trickle Down Conspiracy</h2>
-                <p>I have a conspiracy I would like to share, it exists in the collective consciousness in one form or another, I am here to put them together. The phrase "they create the disease to sell you the cure" might conjure thoughts of anti government, far right alt right covid era sentiment-but at the core of that idea is a great business model. One that works as a well oiled machine, absorbing us into the folds of what is, combined, a huge money making model.</p>
-                
-                <div class="data-box">
-                    <h3>Industry Revenue Overview</h3>
+    <video autoplay muted loop id="myVideo">
+        <source src="Test Bubbles.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <header class="article-header">
+            <div class="container">
+                <div class="logo">
+                    <h1>Reoluan</h1>
+                </div>
+                <nav class="nav-links">
                     <ul>
-                        <li><strong>Healthcare Industry:</strong> 4.9 trillion</li>
-                        <li><strong>Pharmaceutical Industry:</strong> 602.19 billion</li>
-                        <li><strong>Processed Food Industry:</strong> 850 billion</li>
-                    </ul>
-                </div>
-                
-                <p>I think that these massive industries support each other, each feeding into the others revenues and relevance. This is what I call the trickle down effect. Let's say a new drug is created, that drug is being created in a friendly environment in the US government who is allowing the patent from that drug to exist and operate with no competition. That immediately disincentivizes competition. Lowering innovation within the pharmaceutical industry.</p>
-                
-                <p>But let's dig deeper. While some drugs have life saving and immediate practical considerations. Others can be burdened by side effects both short term and long term that can cause cumulative damage to the person involved. In the case of especially psychotropic medication, the process of prescription is fundamentally clinical. You tell your doctor, usually a psychiatrist what symptoms you are feeling and based on that assessment they will administer you a treatment from a list of medications.</p>
-                
-                <p>Unfortunately, there are many things that are not ideal with this picture. The doctor is trained to look for symptoms and treat them. And the industries that manufacture and produce these psychotropics are developing these drugs with the same ethos. We'll treat the symptoms, not the cure. Just the decision to focus on this model vs another can have powerful ramifications for the patient and consumer.</p>
-                
-                <p>This can unfortunately have the consequence of dictating how much money is put into certain ailments, based on the profitability as well as the glaring issue of investing in treating symptoms not finding a cure. The idea is simple, if they invested in trying to find a cure for all diseases they would be out of a business! They need us to be dependent on refilling prescriptions, to keep a constant flow of income.</p>
-                
-                <p>The ethos becomes how can we make more money by any mechanism, rather than developing quality medications that people can benefit more from. This same mechanism also benefits the healthcare industry and starts with the food industry and of course the healthcare industry. If people eat unhealthy foods and develop chronic conditions they will need to be administered into a hospital, and charged through their insurance company.</p>
-                
-                <p>They will also usually be given medicines that contain side effects, which in turn create another opportunity for another medicine to be prescribed and so on. This can also be extrapolated into a more sinister plot where the pharmaceutical industries intentionally invest large sums of money into engineering side effects and charging to treat them.</p>
-                
-                <p>The cycle starts again with the food industry which lobbies millions of dollars for inaccurate labels to be placed on foods like vegetable oils and cherry picked research studies to be done on foods they want to sell. This starts the cycle of misinformation and chronic health problems.</p>
-            </div>
-
-            <div class="article-cta">
-                <p>Get weekly insights on natural health and wellness.</p>
-                <div class="btn-group">
-                    <a href="/#subscribe" class="btn primary">Subscribe to Our Newsletter</a>
-                    <a href="/" class="back-home">← Back to Home</a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer class="global-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Reoluan</h3>
-                    <p>Personalized Natural Health Solutions</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/#hero">Home</a></li>
                         <li><a href="/#newsletter">Newsletter</a></li>
                         <li><a href="/#about">About</a></li>
                         <li><a href="/#contact">Contact</a></li>
                     </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="article-main">
+            <article class="container">
+                <div class="article-meta">
+                    <time datetime="2023-02-28">February 28, 2023</time>
                 </div>
-                <div class="footer-social">
-                    <h4>Connect With Us</h4>
-                    <div class="social-icons">
-                        <a href="https://x.com/LuanReo" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-x-twitter"></i>
-                            <span class="sr-only">X (formerly Twitter)</span>
-                        </a>
-                        <a href="https://www.instagram.com/reoluan/" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
+                
+                <div class="article-content">
+                    <h1>The Trickle Down Effect in Healthcare</h1>
+                    
+                    <p class="article-intro">This is the first of many newsletters discussing a revolution that is happening in health, big pharma and the food industry. This begins with the election of Donald J. Trump and the Approval of JFK Jr.</p>
+                    
+                    <h2>The Trickle Down Conspiracy</h2>
+                    <p>I have a conspiracy I would like to share, it exists in the collective consciousness in one form or another, I am here to put them together. The phrase "they create the disease to sell you the cure" might conjure thoughts of anti government, far right alt right covid era sentiment-but at the core of that idea is a great business model. One that works as a well oiled machine, absorbing us into the folds of what is, combined, a huge money making model.</p>
+                    
+                    <div class="data-box">
+                        <h3>Industry Revenue Overview</h3>
+                        <ul>
+                            <li><strong>Healthcare Industry:</strong> 4.9 trillion</li>
+                            <li><strong>Pharmaceutical Industry:</strong> 602.19 billion</li>
+                            <li><strong>Processed Food Industry:</strong> 850 billion</li>
+                        </ul>
+                    </div>
+                    
+                    <p>I think that these massive industries support each other, each feeding into the others revenues and relevance. This is what I call the trickle down effect. Let's say a new drug is created, that drug is being created in a friendly environment in the US government who is allowing the patent from that drug to exist and operate with no competition. That immediately disincentivizes competition. Lowering innovation within the pharmaceutical industry.</p>
+                    
+                    <p>But let's dig deeper. While some drugs have life saving and immediate practical considerations. Others can be burdened by side effects both short term and long term that can cause cumulative damage to the person involved. In the case of especially psychotropic medication, the process of prescription is fundamentally clinical. You tell your doctor, usually a psychiatrist what symptoms you are feeling and based on that assessment they will administer you a treatment from a list of medications.</p>
+                    
+                    <p>Unfortunately, there are many things that are not ideal with this picture. The doctor is trained to look for symptoms and treat them. And the industries that manufacture and produce these psychotropics are developing these drugs with the same ethos. We'll treat the symptoms, not the cure. Just the decision to focus on this model vs another can have powerful ramifications for the patient and consumer.</p>
+                    
+                    <p>This can unfortunately have the consequence of dictating how much money is put into certain ailments, based on the profitability as well as the glaring issue of investing in treating symptoms not finding a cure. The idea is simple, if they invested in trying to find a cure for all diseases they would be out of a business! They need us to be dependent on refilling prescriptions, to keep a constant flow of income.</p>
+                    
+                    <p>The ethos becomes how can we make more money by any mechanism, rather than developing quality medications that people can benefit more from. This same mechanism also benefits the healthcare industry and starts with the food industry and of course the healthcare industry. If people eat unhealthy foods and develop chronic conditions they will need to be administered into a hospital, and charged through their insurance company.</p>
+                    
+                    <p>They will also usually be given medicines that contain side effects, which in turn create another opportunity for another medicine to be prescribed and so on. This can also be extrapolated into a more sinister plot where the pharmaceutical industries intentionally invest large sums of money into engineering side effects and charging to treat them.</p>
+                    
+                    <p>The cycle starts again with the food industry which lobbies millions of dollars for inaccurate labels to be placed on foods like vegetable oils and cherry picked research studies to be done on foods they want to sell. This starts the cycle of misinformation and chronic health problems.</p>
+                </div>
+
+                <div class="article-cta">
+                    <p>Get weekly insights on natural health and wellness.</p>
+                    <div class="btn-group">
+                        <a href="/#subscribe" class="btn primary">Subscribe to Our Newsletter</a>
+                        <a href="/" class="back-home">← Back to Home</a>
                     </div>
                 </div>
+            </article>
+        </main>
+
+        <footer class="global-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>Reoluan</h3>
+                        <p>Personalized Natural Health Solutions</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/#newsletter">Newsletter</a></li>
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="/#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Connect With Us</h4>
+                        <div class="social-icons">
+                            <a href="https://x.com/LuanReo" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-x-twitter"></i>
+                                <span class="sr-only">X (formerly Twitter)</span>
+                            </a>
+                            <a href="https://www.instagram.com/reoluan/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                            <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                                <span class="sr-only">LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Reoluan. All rights reserved.</p>
+                    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Reoluan. All rights reserved.</p>
-                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html> 
