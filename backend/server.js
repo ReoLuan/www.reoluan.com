@@ -113,7 +113,8 @@ runTests();
 // Newsletter subscription endpoint
 app.post('/api/subscribe', async (req, res) => {
   try {
-    const { name, email, interests } = req.body;
+    const { name, email } = req.body;
+    let interests = req.body.interests;
 
     // Validate input
     if (!name || !email) {
@@ -123,12 +124,18 @@ app.post('/api/subscribe', async (req, res) => {
       });
     }
 
+    // Sanitize interests field
+    if (typeof interests !== "string") {
+      interests = "None";
+    }
+
+    // Optional: log the data being inserted
+    console.log("📬 Subscribing user:", { name, email, interests });
+
     // Store in Supabase
     const { data, error: supabaseError } = await supabase
       .from('newsletter_subscribers')
-      .insert([
-        { name, email, interests }
-      ]);
+      .insert([{ name, email, interests }]);
 
     if (supabaseError) throw supabaseError;
 
@@ -139,9 +146,9 @@ app.post('/api/subscribe', async (req, res) => {
       subject: 'Welcome to Reoluan Newsletter!',
       text: `
         Hi ${name},
-        
+
         Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.
-        
+
         Best regards,
         The Reoluan Team
       `,
@@ -155,16 +162,16 @@ app.post('/api/subscribe', async (req, res) => {
 
     await sgMail.send(msg);
 
-    res.json({ 
-      success: true, 
-      message: 'Thank you for subscribing to our newsletter!' 
+    res.json({
+      success: true,
+      message: 'Thank you for subscribing to our newsletter!'
     });
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).json({ 
-      success: false, 
+    res.status(500).json({
+      success: false,
       message: 'Error processing your subscription',
-      error: error.message 
+      error: error.message
     });
   }
 });
