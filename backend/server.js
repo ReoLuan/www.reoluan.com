@@ -9,8 +9,18 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Accept']
+}));
 app.use(express.json());
+
+// Debug middleware to log all requests
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
 
 // Serve static files from the current directory
 app.use(express.static(__dirname));
@@ -18,6 +28,11 @@ app.use(express.static(__dirname));
 // Serve index.html for the root route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Test route to verify server is working
+app.get('/test', (req, res) => {
+  res.json({ message: 'Server is running!' });
 });
 
 // Verify environment variables
@@ -87,9 +102,9 @@ runTests();
 
 // Newsletter subscription endpoint
 app.post('/api/subscribe', async (req, res) => {
+  console.log('Received subscription request:', req.body);
   try {
-    const { name, email } = req.body;
-    let interests = req.body.interests;
+    const { name, email, interests } = req.body;
 
     // Validate input
     if (!name || !email) {
@@ -99,20 +114,25 @@ app.post('/api/subscribe', async (req, res) => {
       });
     }
 
-    // Sanitize interests field
-    if (typeof interests !== "string") {
-      interests = "None";
-    }
-
-    // Optional: log the data being inserted
-    console.log("📬 Subscribing user:", { name, email, interests });
+    console.log("📬 Attempting to subscribe user:", { name, email, interests });
 
     // Store in Supabase
     const { data, error: supabaseError } = await supabase
       .from('newsletter_subscribers')
-      .insert([{ name, email, interests }]);
+      .insert([{ 
+        name, 
+        email, 
+        interests: interests || 'None',
+        created_at: new Date().toISOString()
+      }])
+      .select();
 
-    if (supabaseError) throw supabaseError;
+    if (supabaseError) {
+      console.error("❌ Supabase error:", supabaseError);
+      throw supabaseError;
+    }
+
+    console.log("✅ Successfully stored in Supabase:", data);
 
     // Send confirmation email
     const msg = {
@@ -136,13 +156,14 @@ app.post('/api/subscribe', async (req, res) => {
     };
 
     await sgMail.send(msg);
+    console.log("✅ Confirmation email sent");
 
     res.json({
       success: true,
       message: 'Thank you for subscribing to our newsletter!'
     });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('❌ Error:', error);
     res.status(500).json({
       success: false,
       message: 'Error processing your subscription',

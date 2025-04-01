@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Subscribing...';
 
             try {
+                console.log('Submitting form data:', { name, email, interests });
+                
                 const response = await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: {
@@ -43,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: JSON.stringify({ name, email, interests })
                 });
 
+                console.log('Response status:', response.status);
                 const data = await response.json();
+                console.log('Response data:', data);
 
                 if (response.ok) {
                     alert(data.message);
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(data.message || 'Failed to subscribe');
                 }
             } catch (error) {
+                console.error('Subscription error:', error);
                 alert('Error subscribing: ' + error.message);
             } finally {
                 // Re-enable form
