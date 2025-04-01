@@ -43,7 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await fetch('https://reoluan-backend.onrender.com/api/subscribe', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Origin': window.location.origin
                     },
                     body: JSON.stringify({
                         name: name,
@@ -52,17 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                 });
 
-                const data = await response.json();
-
-                if (response.ok) {
-                    alert(data.message || 'Successfully subscribed!');
-                    subscribeForm.reset();
-                } else {
-                    throw new Error(data.message || 'Failed to subscribe');
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Server response:', errorText);
+                    throw new Error(`Server responded with status ${response.status}`);
                 }
+
+                const data = await response.json();
+                alert(data.message || 'Successfully subscribed!');
+                subscribeForm.reset();
             } catch (error) {
                 console.error('Subscription error:', error);
-                alert(error.message || 'Error subscribing. Please try again.');
+                alert('Error subscribing. Please try again. ' + error.message);
             } finally {
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
