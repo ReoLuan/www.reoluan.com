@@ -118,17 +118,11 @@ app.post('/api/subscribe', async (req, res) => {
     const msg = {
       to: email,
       from: process.env.SENDGRID_VERIFIED_SENDER,
-      replyTo: email,
       subject: 'Welcome to Reoluan Newsletter!',
       text: `
         Hi ${name},
 
         Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.
-        
-        Your subscription details:
-        Name: ${name}
-        Email: ${email}
-        Interests: ${interests}
 
         Best regards,
         The Reoluan Team
@@ -137,12 +131,6 @@ app.post('/api/subscribe', async (req, res) => {
         <h3>Welcome to Reoluan Newsletter!</h3>
         <p>Hi ${name},</p>
         <p>Thank you for subscribing to our newsletter! We're excited to share personalized health insights with you.</p>
-        <p><strong>Your subscription details:</strong></p>
-        <ul>
-          <li>Name: ${name}</li>
-          <li>Email: ${email}</li>
-          <li>Interests: ${interests}</li>
-        </ul>
         <p>Best regards,<br>The Reoluan Team</p>
       `,
     };
@@ -168,7 +156,6 @@ app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Validate input
     if (!name || !email || !message) {
       return res.status(400).json({
         success: false,
@@ -176,50 +163,36 @@ app.post('/api/contact', async (req, res) => {
       });
     }
 
-    // Store in Supabase
-    const { data, error: supabaseError } = await supabase
+    const { error: supabaseError } = await supabase
       .from('contacts')
-      .insert([
-        { name, email, message }
-      ]);
+      .insert([{ name, email, message }]);
 
     if (supabaseError) throw supabaseError;
 
-    // Send email via SendGrid
     const msg = {
       to: 'reo@reoluan.com',
       from: process.env.SENDGRID_VERIFIED_SENDER,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `
-        You received a message via Reoluan.com
-
         Name: ${name}
         Email: ${email}
         Message: ${message}
       `,
       html: `
-        <h3>New Contact Form Submission</h3>
-        <p>You received a message via Reoluan.com</p>
+        <h3>New Contact Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
-      `
+      `,
     };
 
     await sgMail.send(msg);
 
-    res.json({ 
-      success: true, 
-      message: 'Thank you! Your message has been sent successfully.' 
-    });
+    res.json({ success: true, message: 'Message sent successfully!' });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Error processing your request',
-      error: error.message 
-    });
+    console.error('Contact form error:', error);
+    res.status(500).json({ success: false, message: 'Message failed to send', error: error.message });
   }
 });
 
