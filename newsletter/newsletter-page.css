@@ -178,6 +178,7 @@
 .article-page {
     background-color: #fff;
     color: #2C3E50;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Header */
@@ -302,6 +303,7 @@
 }
 
 .article-content h1 {
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -311,6 +313,7 @@
 }
 
 .article-intro {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
     line-height: 1.9;
     color: var(--text-color);
@@ -321,6 +324,7 @@
 }
 
 .article-content h2 {
+    font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     margin: 3rem 0 1.5rem;
     color: var(--heading-color);
@@ -329,12 +333,14 @@
 }
 
 .article-content h3 {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     margin: 2rem 0 1rem;
     color: #2C3E50;
 }
 
 .article-content p {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: 1.8rem;
@@ -345,6 +351,7 @@
 
 /* Data Box */
 .data-box {
+    font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
     border-left: 4px solid var(--primary-color);
     padding: 1.5rem;
