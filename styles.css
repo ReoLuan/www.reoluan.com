@@ -165,8 +165,8 @@ header .container {
 
 .logo h1 {
     font-size: 22px;
-    font-weight: 600;
-    color: #00c853;
+    font-weight: 500;
+    color: #4CAF50;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -625,9 +625,9 @@ footer {
 }
 
 .footer-logo h3 {
-    color: #00c853;
+    color: #4CAF50;
     margin-bottom: 5px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 22px;
 }
 
@@ -1126,9 +1126,9 @@ footer {
 }
 
 .footer-logo h3 {
-    color: #00c853;
+    color: #4CAF50;
     margin-bottom: 5px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 22px;
 }
 

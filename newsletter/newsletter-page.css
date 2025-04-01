@@ -26,8 +26,8 @@
 
 .article-header .logo h1 {
     font-size: 22px;
-    font-weight: 600;
-    color: #00c853;
+    font-weight: 500;
+    color: #4CAF50;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -210,17 +210,17 @@
 
 .article-page .logo h1 {
     font-size: 22px;
-    font-weight: 600;
-    color: #00c853;
+    font-weight: 500;
+    color: #4CAF50;
     margin: 0;
     letter-spacing: 0.5px;
 }
 
 .article-page .logo a {
-    color: #00c853;
+    color: #4CAF50;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .article-page .logo a:hover {
@@ -554,9 +554,9 @@
 }
 
 .global-footer .footer-logo h3 {
-    color: #00c853;
+    color: #4CAF50;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 22px;
 }
 
