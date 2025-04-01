@@ -23,10 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
         subscribeForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const interests = document.getElementById('interests')?.value || '';
+            // Get form values and sanitize them
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const interests = document.getElementById('interests')?.value?.trim() || '';
+            
+            if (!name || !email) {
+                alert('Please fill in all required fields');
+                return;
+            }
             
             // Disable form while submitting
             const submitButton = subscribeForm.querySelector('button[type="submit"]');
@@ -40,20 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ name, email, interests })
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        interests: interests
+                    })
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
-                    alert(data.message);
+                    alert(data.message || 'Successfully subscribed!');
                     subscribeForm.reset();
                 } else {
                     throw new Error(data.message || 'Failed to subscribe');
                 }
             } catch (error) {
                 console.error('Subscription error:', error);
-                alert('Error subscribing: ' + error.message);
+                alert(error.message || 'Error subscribing. Please try again.');
             } finally {
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
@@ -67,10 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const message = document.getElementById('message').value;
+            // Get form values and sanitize them
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
             
             // Disable form while submitting
             const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -84,20 +98,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ name, email, message })
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
-                    alert(data.message);
+                    alert(data.message || 'Message sent successfully!');
                     contactForm.reset();
                 } else {
                     throw new Error(data.message || 'Failed to send message');
                 }
             } catch (error) {
                 console.error('Contact error:', error);
-                alert('Error sending message: ' + error.message);
+                alert(error.message || 'Error sending message. Please try again.');
             } finally {
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
