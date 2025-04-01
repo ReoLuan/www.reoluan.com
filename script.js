@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Subscribing...';
 
             try {
-                const response = await fetch('/api/subscribe', {
+                const response = await fetch('https://reoluan-backend.onrender.com/api/subscribe', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Sending...';
 
             try {
-                const response = await fetch('/api/contact', {
+                const response = await fetch('https://reoluan-backend.onrender.com/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
