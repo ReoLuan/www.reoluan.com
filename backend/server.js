@@ -177,4 +177,36 @@ app.post('/api/contact', async (req, res) => {
     const msg = {
       to: 'reo@reoluan.com',
       from: process.env.SENDGRID_VERIFIED_SENDER,
-      subject: `
+      subject: `New Contact Form Submission from ${name}`,
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
+      `,
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `
+    };
+
+    await sgMail.send(msg);
+
+    res.json({ 
+      success: true, 
+      message: 'Thank you! Your message has been sent successfully.' 
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Error processing your request',
+      error: error.message 
+    });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
