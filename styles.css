@@ -164,9 +164,9 @@ header .container {
 }
 
 .logo h1 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #4CAF50;
+    font-size: 22px;
+    font-weight: 600;
+    color: #00c853;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -625,11 +625,10 @@ footer {
 }
 
 .footer-logo h3 {
-    color: #4CAF50;
+    color: var(--primary-color);
     margin-bottom: 5px;
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 22px;
 }
 
 .footer-logo p {
@@ -1127,11 +1126,10 @@ footer {
 }
 
 .footer-logo h3 {
-    color: #4CAF50;
+    color: var(--primary-color);
     margin-bottom: 5px;
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 22px;
 }
 
 /* Refine text island animations */
