@@ -178,7 +178,7 @@
 .article-page {
     background-color: #fff;
     color: #2C3E50;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Header */
@@ -296,14 +296,14 @@
 }
 
 .article-content {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     max-width: 720px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .article-content h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.8rem;
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -313,7 +313,7 @@
 }
 
 .article-intro {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.25rem;
     line-height: 1.9;
     color: var(--text-color);
@@ -324,7 +324,7 @@
 }
 
 .article-content h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2rem;
     margin: 3rem 0 1.5rem;
     color: var(--heading-color);
@@ -333,14 +333,14 @@
 }
 
 .article-content h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.4rem;
     margin: 2rem 0 1rem;
     color: #2C3E50;
 }
 
 .article-content p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: 1.8rem;
@@ -351,7 +351,7 @@
 
 /* Data Box */
 .data-box {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
     border-left: 4px solid var(--primary-color);
     padding: 1.5rem;
@@ -360,18 +360,21 @@
 }
 
 .data-box h3 {
+    font-family: 'Inter', sans-serif;
     color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
 .data-box ul {
+    font-family: 'Inter', sans-serif;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .data-box li {
+    font-family: 'Inter', sans-serif;
     padding: 0.5rem 0;
     font-size: 1.1rem;
     color: #34495e;
