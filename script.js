@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const interests = document.getElementById('interests').value;
+            const interests = document.getElementById('interests')?.value || '';
             
             // Disable form while submitting
             const submitButton = subscribeForm.querySelector('button[type="submit"]');
@@ -35,19 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Subscribing...';
 
             try {
-                console.log('Submitting form data:', { name, email, interests });
-                
                 const response = await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ name, email, interests })
                 });
 
-                console.log('Response status:', response.status);
                 const data = await response.json();
-                console.log('Response data:', data);
 
                 if (response.ok) {
                     alert(data.message);
@@ -59,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Subscription error:', error);
                 alert('Error subscribing: ' + error.message);
             } finally {
-                // Re-enable form
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
             }
@@ -87,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ name, email, message })
                 });
@@ -101,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(data.message || 'Failed to send message');
                 }
             } catch (error) {
+                console.error('Contact error:', error);
                 alert('Error sending message: ' + error.message);
             } finally {
-                // Re-enable form
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
             }

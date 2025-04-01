@@ -1,11 +1,10 @@
 {
-  "name": "reoluan-website",
+  "name": "reoluan-api",
   "version": "1.0.0",
-  "main": "server.js",
-  "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",

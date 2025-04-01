@@ -1,11 +1,20 @@
--- Enable UUID extension if not already enabled
-create extension if not exists "uuid-ossp";
+-- Enable UUID extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- Create the newsletter_subscribers table
-create table if not exists newsletter_subscribers (
-    id uuid default uuid_generate_v4() primary key,
-    name text not null,
-    email text not null,
-    interests text,
-    created_at timestamp with time zone default timezone('utc'::text, now()) not null
+-- Create newsletter_subscribers table
+CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    interests TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, now()) NOT NULL
+);
+
+-- Create contacts table
+CREATE TABLE IF NOT EXISTS contacts (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, now()) NOT NULL
 ); 
