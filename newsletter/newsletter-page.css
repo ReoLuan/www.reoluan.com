@@ -217,14 +217,14 @@
 }
 
 .article-page .logo a {
-    color: var(--primary-color);
+    color: #00c853;
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 600;
 }
 
 .article-page .logo a:hover {
-    color: var(--secondary-color);
+    color: #2E7D32;
 }
 
 .article-page .nav-links {
@@ -554,7 +554,7 @@
 }
 
 .global-footer .footer-logo h3 {
-    color: var(--primary-color);
+    color: #00c853;
     margin-bottom: 0.5rem;
     font-weight: 600;
     font-size: 22px;
