@@ -24,12 +24,13 @@
     align-items: center;
 }
 
-.article-header .logo h1 {
-    font-size: 22px;
-    font-weight: 500;
-    color: #4CAF50;
-    margin: 0;
-    letter-spacing: 0.5px;
+.article-header .logo h1,
+.article-page .logo h1 {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #00c853 !important;
+    margin: 0 !important;
+    letter-spacing: 0.5px !important;
 }
 
 .nav-links ul {
@@ -208,19 +209,11 @@
     align-items: center;
 }
 
-.article-page .logo h1 {
-    font-size: 22px;
-    font-weight: 500;
-    color: #4CAF50;
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
 .article-page .logo a {
-    color: #4CAF50;
+    color: #00c853 !important;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 500;
+    font-weight: 600 !important;
 }
 
 .article-page .logo a:hover {
@@ -554,10 +547,10 @@
 }
 
 .global-footer .footer-logo h3 {
-    color: #4CAF50;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    font-size: 22px;
+    color: var(--primary-color) !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
 }
 
 .global-footer .footer-logo p {
