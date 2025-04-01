@@ -244,123 +244,60 @@ nav ul li a:hover {
 }
 
 /* Newsletter Section */
-#newsletter {
-    background-color: var(--light-background);
+.newsletter-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
 }
 
-#newsletter h2 {
+.newsletter-section h2 {
     text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-color);
-    font-size: 28px;
-}
-
-#newsletter h2:after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: var(--primary-color);
-    margin: 15px auto 0;
-}
-
-.newsletter-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.newsletter-description {
-    flex: 1;
-    min-width: 300px;
-}
-
-.newsletter-description ul {
-    list-style: none;
-    margin-left: 0;
-    margin-bottom: 20px;
-}
-
-.newsletter-description ul li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 10px;
-}
-
-.newsletter-description ul li:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--primary-color);
+    margin-bottom: 2rem;
+    color: #333;
 }
 
 .newsletter-preview {
-    flex: 1;
-    min-width: 300px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.preview-card {
-    background-color: var(--card-background);
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: var(--card-shadow);
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.newsletter-preview h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
-.preview-card h4 {
-    color: var(--text-color);
-    font-size: 18px;
-    margin-bottom: 10px;
+.newsletter-preview .date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
-.preview-card .date {
-    color: var(--light-text);
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.preview-card .excerpt {
-    margin-bottom: 20px;
+.newsletter-preview .preview-text {
+    font-size: 1.1rem;
     line-height: 1.6;
+    color: #444;
+    margin-bottom: 1.5rem;
 }
 
-.read-more {
+.newsletter-preview .btn {
     display: inline-block;
-    margin: 20px 0;
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
 }
 
-.read-more:hover {
-    color: var(--primary-color-dark);
-}
+@media (max-width: 768px) {
+    .newsletter-preview {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
 
-.read-more:after {
-    content: '→';
-    margin-left: 5px;
-    transition: margin-left 0.3s ease;
-}
-
-.read-more:hover:after {
-    margin-left: 8px;
-}
-
-.newsletter-cta {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    font-size: 16px;
-    width: 100%;
-    text-align: center;
-    border-radius: 6px;
+    .newsletter-preview h3 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Newsletter content styling */
